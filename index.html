@@ -1,2 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link href="mario.css" rel="stylesheet">-->
+        <style>
+            *{
+    background-color: cyan;
+}
 
-dgfdgxdgfsdgfsdrgfsdrgfsdgfsdgfsdgfs
+.null{
+    background-color: cyan;
+    position: relative;
+    
+} 
+.red{
+    background-color: red;
+    position: relative;
+    animation-name: salto;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-delay: 1s;
+} 
+.hair{
+    background-color: olive;
+    position: relative;
+    animation-name: salto;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-delay: 1s;
+} 
+.face{
+    background-color: rgb(202, 121, 44);
+    position: relative;
+    animation-name: salto;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+.brazo{
+    background-color: olive;
+    opacity: 0%;
+    position: relative;
+    animation-name: salto,in-salto;
+    animation-timing-function: ease,ease;
+    animation-iteration-count: infinite,infinite;
+    animation-duration: 2s,2s;
+    animation-delay: 1s,1s;
+    
+    
+}
+.brazoabajo{
+    background-color: olive;
+    position: relative;
+    animation-name: in-salto-abajo;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    
+}
+.mano{
+    background-color: rgb(202, 121, 44);
+    opacity: 0%;
+    position: relative;
+    animation-name: salto, in-salto;
+    animation-timing-function: ease, none;
+    animation-iteration-count: infinite, infinite;
+    animation-duration: 2s, 2s;
+    animation-delay: 1s,1s;
+}
+.manoabajo{
+    background-color: rgb(202, 121, 44);
+    position: relative;
+    animation-name: in-salto-abajo;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+.eye{
+    background-color:olive; 
+    position: relative;
+    animation-name: salto,guiño;
+    animation-timing-function: ease,linear;
+    animation-iteration-count: infinite,infinite;
+    animation-duration: 2s,2s;
+    animation-delay: 1s,1s;
+   
+}
+
+#contenedor{
+    display: grid;
+    background-color: cyan;
+    justify-content: center;
+    grid-template-columns: repeat(14, 10px);
+    grid-template-rows: repeat(16, 10px);
+    grid-gap: 0.8px;
+
+    
+    grid-row: span 1;
+    grid-column: span 3;
+    grid-column-start: 2;
+}
+.up{
+    display: grid;
+    grid-template-columns: (3,300px);
+    grid-template-rows: (4,300px);
+    grid-auto-flow: dense;
+    justify-content: center;
+
+    grid-row-start: 1;
+    grid-row: span 2;
+    grid-column: span 3;
+    padding-bottom: 60px;
+    row-gap: 10px;
+    
+}
+.pagina{
+    display: grid;
+    grid-template-columns: (3,300px);
+    grid-template-rows: (6,300px);
+    grid-auto-flow: dense;
+    justify-content: center;
+    
+}
+
+
+
+.u{
+clip-path: polygon(30% 50%, 70% 50%, 70% 0, 100% 0, 100% 100%, 0 100%, 0 0, 30% 0);
+display:grid;
+    grid-column-start: 1;
+}
+    
+.p{
+    display:grid;
+    grid-column-start: 2;
+    clip-path: polygon(0 0, 100% 0, 100% 62%, 37% 62%, 36% 100%, 36% 43%, 65% 43%, 65% 19%, 37% 19%, 37% 30%, 36% 100%, 0 100%);
+}
+.exclamacion{
+    display:grid;
+    grid-column-start: 3;
+    clip-path: polygon(36% 0, 63% 0, 63% 60%, 36% 60%, 36% 78%, 64% 78%, 64% 100%, 36% 100%, 36% 100%, 36% 60%);
+}
+.block{
+    display:grid;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    padding-left: 100px;
+}
+
+
+
+@keyframes guiño{
+    
+    0%{background-color: rgb(202, 121, 44)};
+    25%{background-color: rgb(202, 121, 44)};
+    50%{background-color: rgb(202, 121, 44)};
+    75%{background-color: rgb(202, 121, 44)};
+    100%{background-color: olive};
+}
+
+@keyframes salto{
+
+    0% {
+        top: 0px;
+      }
+    50%{
+        top:-60px;
+    }
+      
+
+}
+
+
+@keyframes in-salto{
+
+    0%{opacity: 0%}
+    25%{opacity: 100%}
+    50%{opacity: 100%}
+    75%{opacity: 100%}
+    100%{opacity: 0%}
+
+/*100%{ opacity: 100%}*/
+
+}
+
+@keyframes in-salto-abajo{
+
+    
+    0%{background-color: cyan;}
+    25%{background-color: cyan;}
+    50%{background-color: cyan;}
+    75%{background-color: cyan;}
+    100%{}
+    /*from{ opacity: 0%};
+    to{ opacity: 0%};*/
+}
+
+        </style>
+    </head>
+    <body> 
+    <div class="pagina">
+        <div class="up">
+            <div class="u">
+                <img src="U.png" alt="" width="200" height="200">
+            </div>
+            <div class="p">
+                <img src="P.png" alt="" width="200" height="200">
+            </div>
+            <div class="exclamacion">
+                <img src="!.png" alt="" width="200" height="200">
+            </div>
+            
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div id="contenedor">
+          
+          <!--                       -1-                      -2-                      -3-                      -4-                     -5-                     -6-                         -7-                      -8-                      -9-                     -10-                      -11-                     -12-                     -13-                     -14-                                                                                                                                                                       -->
+          <!--1-->  <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="red"></div> <div class="red"></div>     <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="null"></div> <div class="null"></div> <div class="mano"></div> <div class="mano"></div> <div class="mano"></div>
+          <!--2-->  <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="red"></div>  <div class="red"></div> <div class="red"></div>     <div class="red"></div>  <div class="red"></div>  <div class="red"></div>   <div class="red"></div> <div class="red"></div>  <div class="red"></div>  <div class="mano"></div> <div class="mano"></div>
+          <!--3-->  <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div>   <div class="face"></div> <div class="face"></div> <div class="eye"></div> <div class="face"></div> <div class="null"></div> <div class="brazo"></div> <div class="brazo"></div> <div class="brazo"></div>
+          <!--4-->  <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="face"></div> <div class="hair"></div> <div class="face"></div>   <div class="face"></div> <div class="face"></div> <div class="hair"></div> <div class="face"></div> <div class="face"></div> <div class="face"></div> <div class="brazo"></div> <div class="brazo"></div>
+          <!--5-->  <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="face"></div> <div class="hair"></div> <div class="hair"></div>   <div class="face"></div> <div class="face"></div> <div class="face"></div> <div class="hair"></div> <div class="face"></div> <div class="face"></div> <div class="face"></div> <div class="brazo"></div>
+          <!--6-->  <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="face"></div> <div class="face"></div>   <div class="face"></div> <div class="face"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="brazo"></div> <div class="null"></div>
+          <!--7-->  <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="face"></div> <div class="face"></div>   <div class="face"></div> <div class="face"></div> <div class="face"></div> <div class="face"></div> <div class="face"></div> <div class="brazo"></div> <div class="brazo"></div> <div class="null"></div>
+          <!--8-->  <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="red"></div>    <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="brazo"></div> <div class="brazo"></div> <div class="brazo"></div> <div class="null"></div> <div class="null"></div>
+          <!--9-->  <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="red"></div>    <div class="hair"></div> <div class="hair"></div> <div class="red"></div>  <div class="brazoabajo"></div> <div class="brazoabajo"></div> <div class="brazoabajo"></div> <div class="null"></div> <div class="null"></div>
+          <!--10--> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="red"></div>    <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="brazoabajo"></div> <div class="brazoabajo"></div> <div class="brazoabajo"></div> <div class="brazoabajo"></div> <div class="null"></div>
+          <!--11--> <div class="null"></div> <div class="face"></div> <div class="face"></div> <div class="hair"></div> <div class="red"></div> <div class="face"></div>    <div class="red"></div>  <div class="red"></div>  <div class="face"></div> <div class="red"></div>  <div class="brazoabajo"></div> <div class="manoabajo"></div> <div class="manoabajo"></div> <div class="null"></div>
+          <!--12--> <div class="null"></div> <div class="face"></div> <div class="face"></div> <div class="face"></div> <div class="red"></div> <div class="red"></div>     <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="manoabajo"></div> <div class="manoabajo"></div> <div class="manoabajo"></div> <div class="null"></div>
+          <!--13--> <div class="null"></div> <div class="face"></div> <div class="face"></div> <div class="red"></div>  <div class="red"></div> <div class="red"></div>     <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="manoabajo"></div> <div class="manoabajo"></div> <div class="null"></div>
+          <!--14--> <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="red"></div>  <div class="red"></div> <div class="red"></div>     <div class="null"></div> <div class="null"></div> <div class="red"></div>  <div class="red"></div>  <div class="red"></div>  <div class="null"></div> <div class="null"></div> <div class="null"></div>
+          <!--15--> <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="null"></div>   <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="null"></div> <div class="null"></div>
+          <!--16--> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="null"></div>   <div class="null"></div> <div class="null"></div> <div class="null"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="hair"></div> <div class="null"></div>
+
+        </div>
+    </div>
+
+
+
+
+    </body>
+</html>
